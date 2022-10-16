@@ -8,6 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 import { Marathon } from './service/marathon.interface';
+import { AppState } from 'src/app/store/app.reducer';
+import { Store } from '@ngrx/store';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-marathon',
@@ -27,7 +30,13 @@ export class MarathonComponent implements OnInit {
 
   marathon: Marathon | null = null;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  private marathons$ = this.store.select('marathon')
+                        .pipe(map((marathonState) => marathonState.marathons));
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private store: Store<AppState>
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ marathon }) => {
