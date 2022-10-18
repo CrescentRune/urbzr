@@ -7,10 +7,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-import { Marathon } from './service/marathon.interface';
 import { AppState } from 'src/app/store/app.reducer';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
+import { Marathon } from '../../service/marathon.interface';
 
 @Component({
   selector: 'app-marathon',
