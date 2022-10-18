@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MarathonComponent } from './components/marathon/marathon.component';
-import { MarathonResolver } from './components/marathon/marathon.resolver';
+import { MarathonsPage } from './components/marathons/marathons.page';
 
 const routes: Routes = [
   {
-    path: 'marathon/:id',
-    component: MarathonComponent,
-    resolve: {
-      marathon: MarathonResolver
-    }
+    path: 'marathons',
+    component: MarathonsPage,
   }
 ];
 

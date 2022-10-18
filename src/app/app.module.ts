@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MarathonComponent } from './components/marathon/marathon.component';
+import { MarathonsPage } from './components/marathons/marathons.page';
 import { MovieComponent } from './components/movie/movie.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { MarathonEffects } from './components/marathon/store/marathon.effects';
+import { MarathonEffects } from './components/marathons/store/marathon.effects';
 import { appReducer } from './store/app.reducer';
 
 
@@ -20,7 +20,7 @@ import { appReducer } from './store/app.reducer';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MarathonComponent,
+    MarathonsPage,
     MovieComponent,
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([MarathonEffects]),
